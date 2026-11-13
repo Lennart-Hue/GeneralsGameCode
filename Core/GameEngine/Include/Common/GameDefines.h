@@ -145,7 +145,7 @@
 
 // Disable non retail fixes in the networking, such as putting more data per UDP packet
 #ifndef RETAIL_COMPATIBLE_NETWORKING
-#define RETAIL_COMPATIBLE_NETWORKING (1)
+#define RETAIL_COMPATIBLE_NETWORKING (0) // LAN build: enable the larger UDP payload and command id overflow fix. Not network compatible with retail or default builds.
 #endif
 
 // This is essentially synonymous for RETAIL_COMPATIBLE_CRC. There is a lot wrong with AIGroup, such as use-after-free, double-free, leaks,
