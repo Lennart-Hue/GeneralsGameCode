@@ -26,11 +26,14 @@ jobs:
       matrix:
         include:
           - preset: "vc6-weekly"
+            tools: false
+          # The artifact collect step needs the Core output folder, which win32 presets only create when tools are built.
           - preset: "win32"
+            tools: true
       fail-fast: false
     uses: ./.github/workflows/reusable-build-toolchain.yml
     with:
       game: "GeneralsMD"
       preset: ${{ matrix.preset }}
-      tools: false
+      tools: ${{ matrix.tools }}
       extras: false
